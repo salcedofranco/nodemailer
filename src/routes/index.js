@@ -5,14 +5,13 @@ const nodemailer = require('nodemailer');
 require('dotenv').config()
 
 router.post('/email', async (req, res) => {
-    const { name, email, phone, message } = req.body;
+    const { name, email, message } = req.body;
 
     contentHTML = `
         <h1>User Information</h1>
         <ul>
             <li>Username: ${name}</li>
             <li>User Email: ${email}</li>
-            <li>PhoneNumber: ${phone}</li>
         </ul>
         <p>${message}</p>
 
